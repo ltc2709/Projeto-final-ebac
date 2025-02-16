@@ -15,11 +15,11 @@ def normalize_text(text):
 st.title("📊 Treinamento de Modelo de Crédito")
 
 # Upload do arquivo .ftr
-uploaded_file = st.file_uploader("Escolha um arquivo .ftr", type=["ftr"])
+uploaded_file = st.file_uploader("Escolha um arquivo .csv", type=["csv"])
 
 if uploaded_file is not None:
     # Carregar o arquivo
-    df = pd.read_feather(uploaded_file)
+    df = pd.read_csv(uploaded_file)
     
     # Remover colunas irrelevantes
     df.drop(columns=['data_ref', 'index'], inplace=True, errors='ignore')
